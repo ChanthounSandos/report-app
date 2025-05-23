@@ -1,10 +1,11 @@
+'use client';
 import { FcGoogle } from "react-icons/fc";
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface Login3Props {
   heading?: string;
@@ -33,6 +34,12 @@ const LoginSection = ({
   signupText = "Don't have an account?",
   signupUrl = "/register",
 }: Login3Props) => {
+  const router = useRouter();
+
+  function login(){
+    router.push("/dashboard");
+  }
+
   return (
     <section className="py-32">
       <div className="container m-auto">
@@ -40,7 +47,7 @@ const LoginSection = ({
           <div className="mx-auto w-full max-w-sm rounded-md p-6 shadow">
             <div className="mb-6 flex flex-col items-center">
               <a href={logo.url} className="mb-6 flex items-center gap-2">
-                <Image src={logo.src} className="max-h-8" alt={logo.alt} />
+                <img src={logo.src} className="max-h-8" alt={logo.alt}/>
               </a>
               <h1 className="mb-2 text-2xl font-bold">{heading}</h1>
               <p className="text-muted-foreground">{subheading}</p>
@@ -72,7 +79,7 @@ const LoginSection = ({
                     Forgot password
                   </a>
                 </div>
-                <Button type="submit" className="mt-2 w-full">
+                <Button onClick={login} type="button" className="mt-2 w-full">
                   {loginText}
                 </Button>
                 <Button variant="outline" className="w-full">
