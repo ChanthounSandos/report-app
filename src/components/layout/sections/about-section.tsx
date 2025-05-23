@@ -9,7 +9,7 @@ export default function AboutSection() {
                     <h2 className="text-balance text-4xl font-medium lg:text-5xl">The Lyra ecosystem brings together our models, products and platforms.</h2>
                     <p>Lyra is evolving to be more than just the models. It supports an entire ecosystem — from products to the APIs and platforms helping developers and businesses innovate.</p>
                 </div>
-                <Image className="rounded-(--radius) grayscale" src="/about_img.avif" alt="team image" fill loading="lazy" />
+                <Image className="rounded-(--radius) grayscale" src="/about_img.avif" alt="team image" width="400" height="400" loading="lazy" />
 
                 <div className="relative mx-auto grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-8 lg:grid-cols-4">
                     <div className="space-y-3">
